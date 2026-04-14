@@ -40,6 +40,6 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "["+id+"]"+name+"/"+age+"/"+phone;
+        return "[" + id + "]" + name + "/" + age + "/" + phone;
     }
 }
