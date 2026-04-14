@@ -19,7 +19,7 @@ public class ContactView {
 
     public void run(){
         while (true){
-            System.out.println("1.추가  2.목록  3.수정  4.삭제  -1:종료");
+            System.out.println("1.추가  2.목록  3.수정  4.삭제 5.검색 -1:종료");
             int cmd = sc.nextInt();
             switch (cmd){
                 case -1 :
@@ -35,6 +35,9 @@ public class ContactView {
                     break;
                 case 4:
                     delete();
+                    break;
+                case 5:
+                    search();
                     break;
                 default:
                     System.out.println("잘 못 입력 함.");
@@ -89,5 +92,19 @@ public class ContactView {
         phone = sc.next();
         //받은 값들을 ContactService.insert() 전달
         contactService.insert(name,age,phone);
+    }
+    private void search() {
+        System.out.println("[ConteVoew.readAll()]");
+        System.out.println("검색어(이름) : ");
+        String keyword = sc.next();
+        Map<Long, Contact>result = contactService.search(keyword);
+        //검색 결과 출력
+        if(result.isEmpty()){
+            System.out.println("검색 결과가 없어요.");
+        } else {
+            for (Long key : result.keySet()){
+                System.out.println(result.get(key));
+            }
+        }
     }
 }
