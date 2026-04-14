@@ -15,8 +15,6 @@ public class ContactView {
         this.contactService = contactService;
     }
 
-
-
     public void run(){
         while (true){
             System.out.println("1.추가  2.목록  3.수정  4.삭제 5.검색 -1:종료");
