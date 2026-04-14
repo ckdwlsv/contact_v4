@@ -44,6 +44,10 @@ public class ContactView {
 
     private void delete(){
         System.out.println("[ConteVoew.delete()]");
+        System.out.println("상제 아이디 : ");
+        Long deleteId = sc.nextLong();
+        //서비스로 id 보내기
+        contactService.delete(deleteId);
     }
 
     private void update(){

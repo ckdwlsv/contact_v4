@@ -22,7 +22,18 @@ public class ContactRepository {
     }
 
     public Map<Long, Contact> findAll() {
-        System.out.println("[ContactService.findAll()]");
+        System.out.println("[ContactRepository.findAll()]");
         return state.getStore();
+    }
+
+    public boolean findById(Long deleteId) {
+        System.out.println("[ContactRepository.findById()]");
+        state.getStore().containsKey(deleteId);
+        return state.getStore().containsKey(deleteId);
+    }
+
+    public void deleteById(Long deleteId) {
+        System.out.println("[ContactRepository.deleteById()]");
+        state.getStore().remove(deleteId);
     }
 }
