@@ -20,4 +20,9 @@ public class ContactRepository {
         state.increaseId();//id 증가
         System.out.println("id 증가 완료");
     }
+
+    public Map<Long, Contact> findAll() {
+        System.out.println("[ContactService.findAll()]");
+        return state.getStore();
+    }
 }
